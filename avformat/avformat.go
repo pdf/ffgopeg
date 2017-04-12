@@ -44,7 +44,6 @@ type (
 	CodecParserFormatContext C.struct_AVCodecParserFormatContext
 	IOContext                C.struct_AVIOContext
 	IOFormatContext          C.struct_AVIOFormatContext
-	Rational                 C.struct_AVRational
 	Codec                    C.struct_AVCodec
 	CodecTag                 C.struct_AVCodecTag
 	Class                    C.struct_AVClass

@@ -4,6 +4,8 @@
 
 package avcodec
 
+import "gopkg.in/targodan/ffgopeg.v1/avutil"
+
 // CodecType returns the general type of the encoded data.
 //
 // C-Field: AVCodecParameters::codec_type
@@ -94,8 +96,8 @@ func (c CodecParameters) Height() int {
 // When the aspect ratio is unknown / undefined, the numerator should be set to 0 (the denominator may have any value).
 //
 // C-Field: AVCodecParameters::sample_aspect_ratio
-func (c CodecParameters) SampleAspectRatio() Rational {
-	return Rational(c.sample_aspect_ratio)
+func (c CodecParameters) SampleAspectRatio() avutil.Rational {
+	return avutil.Rational(c.sample_aspect_ratio)
 }
 
 // FieldOrder returns the order of the fields in interlaced video.

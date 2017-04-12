@@ -11,6 +11,7 @@ import (
 	"unsafe"
 
 	"gopkg.in/targodan/ffgopeg.v1/avcodec"
+	"gopkg.in/targodan/ffgopeg.v1/avutil"
 )
 
 //
@@ -45,26 +46,26 @@ func (avs *Stream) ProbeData() ProbeData {
 
 //
 // C-Variable: AVStream::avg_frame_rate
-func (avs *Stream) AvgFrameRate() Rational {
-	return Rational(avs.avg_frame_rate)
+func (avs *Stream) AvgFrameRate() avutil.Rational {
+	return avutil.Rational(avs.avg_frame_rate)
 }
 
 //
 // C-Variable: AVStream::r_frame_rate
-func (avs *Stream) RFrameRate() Rational {
-	return Rational(avs.r_frame_rate)
+func (avs *Stream) RFrameRate() avutil.Rational {
+	return avutil.Rational(avs.r_frame_rate)
 }
 
 //
 // C-Variable: AVStream::sample_aspect_ratio
-func (avs *Stream) SampleAspectRatio() Rational {
-	return Rational(avs.sample_aspect_ratio)
+func (avs *Stream) SampleAspectRatio() avutil.Rational {
+	return avutil.Rational(avs.sample_aspect_ratio)
 }
 
 //
 // C-Variable: AVStream::time_base
-func (avs *Stream) TimeBase() Rational {
-	return Rational(avs.time_base)
+func (avs *Stream) TimeBase() avutil.Rational {
+	return avutil.Rational(avs.time_base)
 }
 
 //

@@ -20,7 +20,6 @@ type (
 	Options     C.struct_AVOptions
 	Dictionary  C.struct_AVDictionary
 	Tree        C.struct_AVTree
-	Rational    C.struct_AVRational
 	MediaType   C.enum_AVMediaType
 	PictureType C.enum_AVPictureType
 	File        C.FILE

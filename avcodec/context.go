@@ -21,13 +21,13 @@ func (ctxt *CodecContext) Open(codec *Codec, d **Dictionary) avutil.ReturnCode {
 
 // PktTimebase returns the packet timebase.
 // C-Function: av_codec_get_pkt_timebase
-func (ctxt *CodecContext) PktTimebase() Rational {
-	return (Rational)(C.av_codec_get_pkt_timebase((*C.struct_AVCodecContext)(ctxt)))
+func (ctxt *CodecContext) PktTimebase() avutil.Rational {
+	return (avutil.Rational)(C.av_codec_get_pkt_timebase((*C.struct_AVCodecContext)(ctxt)))
 }
 
 // SetPktTimebase sets the packet timebase.
 // C-Function: av_codec_set_pkt_timebase
-func (ctxt *CodecContext) SetPktTimebase(r Rational) {
+func (ctxt *CodecContext) SetPktTimebase(r avutil.Rational) {
 	C.av_codec_set_pkt_timebase((*C.struct_AVCodecContext)(ctxt), (C.struct_AVRational)(r))
 }
 

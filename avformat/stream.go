@@ -14,19 +14,21 @@ import (
 	"strconv"
 	"strings"
 	"unsafe"
+
+	"gopkg.in/targodan/ffgopeg.v1/avutil"
 )
 
 // StreamGetRFrameRate does something undocumented.
 //
 // C-Function: av_stream_get_r_frame_rate
-func (s *Stream) StreamGetRFrameRate() Rational {
-	return (Rational)(C.av_stream_get_r_frame_rate((*C.struct_AVStream)(s)))
+func (s *Stream) StreamGetRFrameRate() avutil.Rational {
+	return (avutil.Rational)(C.av_stream_get_r_frame_rate((*C.struct_AVStream)(s)))
 }
 
 // StreamSetRFrameRate does something undocumented.
 //
 // C-Function: av_stream_set_r_frame_rate
-func (s *Stream) StreamSetRFrameRate(r Rational) {
+func (s *Stream) StreamSetRFrameRate(r avutil.Rational) {
 	C.av_stream_set_r_frame_rate((*C.struct_AVStream)(s), (C.struct_AVRational)(r))
 }
 

@@ -1232,8 +1232,8 @@ func (ctxt *CodecContext) SetThreadType(v int) {
 //            Use framerate instead.
 //
 // C-Field: AVCodecContext::time_base
-func (ctxt *CodecContext) TimeBase() Rational {
-	return (Rational)(ctxt.time_base)
+func (ctxt *CodecContext) TimeBase() avutil.Rational {
+	return (avutil.Rational)(ctxt.time_base)
 }
 
 // SetTimeBase sets the unit of time (in seconds).
@@ -1257,7 +1257,7 @@ func (ctxt *CodecContext) TimeBase() Rational {
 //            Use framerate instead.
 //
 // C-Field: AVCodecContext::time_base
-func (ctxt *CodecContext) SetTimeBase(v Rational) {
+func (ctxt *CodecContext) SetTimeBase(v avutil.Rational) {
 	ctxt.time_base = (C.struct_AVRational)(v)
 }
 
@@ -1462,8 +1462,8 @@ func (ctxt *CodecContext) SetRequestSampleFmt(fmt avutil.SampleFormat) {
 // Numerator and denominator must be relatively prime and smaller than 256 for some video standards.
 //
 // C-Field: AVCodecContext::sample_aspect_ratio
-func (ctxt *CodecContext) SampleAspectRatio() Rational {
-	return (Rational)(ctxt.sample_aspect_ratio)
+func (ctxt *CodecContext) SampleAspectRatio() avutil.Rational {
+	return (avutil.Rational)(ctxt.sample_aspect_ratio)
 }
 
 // SetSampleAspectRatio sets the sample aspect ratio.
@@ -1473,7 +1473,7 @@ func (ctxt *CodecContext) SampleAspectRatio() Rational {
 // Numerator and denominator must be relatively prime and smaller than 256 for some video standards.
 //
 // C-Field: AVCodecContext::sample_aspect_ratio
-func (ctxt *CodecContext) SetSampleAspectRatio(v Rational) {
+func (ctxt *CodecContext) SetSampleAspectRatio(v avutil.Rational) {
 	ctxt.sample_aspect_ratio = (C.struct_AVRational)(v)
 }
 

@@ -273,15 +273,15 @@ func (s *FormatContext) DumpFormat(index int, url string, isOutput bool) {
 // GuessSampleAspectRatio guesses the sample aspect ratio of a frame, based on both the stream and the frame aspect ratio.
 //
 // C-Function: av_guess_sample_aspect_ratio
-func (s *FormatContext) GuessSampleAspectRatio(st *Stream, fr *Frame) Rational {
-	return (Rational)(C.av_guess_sample_aspect_ratio((*C.struct_AVFormatContext)(s), (*C.struct_AVStream)(st), (*C.struct_AVFrame)(fr)))
+func (s *FormatContext) GuessSampleAspectRatio(st *Stream, fr *Frame) avutil.Rational {
+	return (avutil.Rational)(C.av_guess_sample_aspect_ratio((*C.struct_AVFormatContext)(s), (*C.struct_AVStream)(st), (*C.struct_AVFrame)(fr)))
 }
 
 // GuessFrameRate guesses the frame rate, based on both the container and codec information.
 //
 // C-Function: av_guess_frame_rate
-func (s *FormatContext) GuessFrameRate(st *Stream, fr *Frame) Rational {
-	return (Rational)(C.av_guess_frame_rate((*C.struct_AVFormatContext)(s), (*C.struct_AVStream)(st), (*C.struct_AVFrame)(fr)))
+func (s *FormatContext) GuessFrameRate(st *Stream, fr *Frame) avutil.Rational {
+	return (avutil.Rational)(C.av_guess_frame_rate((*C.struct_AVFormatContext)(s), (*C.struct_AVStream)(st), (*C.struct_AVFrame)(fr)))
 }
 
 // MatchStreamSpecifier checks if the stream st contained in s is matched by the stream specifier spec.

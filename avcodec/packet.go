@@ -9,6 +9,8 @@ package avcodec
 import "C"
 import (
 	"unsafe"
+
+	"gopkg.in/targodan/ffgopeg.v1/avutil"
 )
 
 // Init initializes optional fields of a packet with default values.
@@ -137,6 +139,6 @@ func (p *Packet) CopyProps(src *Packet) int {
 // RescaleTs converts valid timing fields (timestamps / durations) in a packet from one timebase to another.
 //
 // C-Function: av_packet_rescale_ts
-func (p *Packet) RescaleTs(r, r2 Rational) {
+func (p *Packet) RescaleTs(r, r2 avutil.Rational) {
 	C.av_packet_rescale_ts((*C.struct_AVPacket)(p), (C.struct_AVRational)(r), (C.struct_AVRational)(r2))
 }
